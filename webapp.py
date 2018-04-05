@@ -17,6 +17,14 @@ def test_connect():
         if thread is None:
             thread = socketio.start_background_task(target=background_thread)
     emit('start', 'connected')
+    
+def background.thread():
+    #this function does the counting
+    count = 0
+    while true:
+        socketio.sleep(5)
+        count += 1
+        emit('my_respose', count) #send count to all clients
 
 @app.route('/')
 def index():
