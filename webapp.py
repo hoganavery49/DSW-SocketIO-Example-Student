@@ -10,6 +10,13 @@ socketio = SocketIO(app, async_mode=None)
 thread = None
 thread_lock = Lock() #we'll use this lock to prevent multiple clients from modifying thread at the same time
 
+@socketio.on('connect') #run this when the connection starts
+def test_connect():
+    global thread
+    with thread_lock:
+        if thread is None:
+            thread = socketio.start_background_task(target=background_thread)
+    emit('start', 'connected')
 
 @app.route('/')
 def index():
