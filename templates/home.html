@@ -13,6 +13,11 @@
 	    socket.on('start', function(msg) {
 	    	$('#start').text(msg); //display the server data
 	    });
+		
+	    //Event handler for my response events
+	    socket.on('my_response', function(msg) {
+		$('#log').append(<'br>' + msg);    
+	    });
 	});
     </script>
 </head>
