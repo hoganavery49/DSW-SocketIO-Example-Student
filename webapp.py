@@ -18,7 +18,7 @@ def test_connect():
             thread = socketio.start_background_task(target=background_thread)
     emit('start', 'connected')
     
-def background.thread():
+def background_thread():
     #this function does the counting
     count = 0
     while true:
