@@ -21,7 +21,7 @@ def test_connect():
 def background_thread():
     #this function does the counting
     count = 0
-    while true:
+    while True:
         socketio.sleep(5)
         count += 1
         emit('my_respose', count) #send count to all clients
