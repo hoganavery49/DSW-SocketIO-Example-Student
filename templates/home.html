@@ -10,7 +10,7 @@
             var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace); 
             
 	    //Event handler for the start event
-	    socket.on('start', function(msg)) {
+	    socket.on('start', function(msg) {
 	    	$('start').text(msg); //display the server data
 	    });
 	});
